@@ -1,0 +1,34 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Secretary Info</title>
+</head>
+<body>
+    <h2>Інформація секретаря:</h2>
+
+    <p><strong>Ім'я:</strong> <span id="firstName"></span></p>
+    <p><strong>Прізвище:</strong> <span id="lastName"></span></p>
+    <p><strong>Вік:</strong> <span id="age"></span></p>
+
+    <script>
+        class Secretary {
+            constructor(firstName, lastName, age) {
+                this.firstName = firstName;
+                this.lastName = lastName;
+                this.age = age;
+            }
+        }
+
+        let secretary = new Secretary("Михайло", "Мосейко", 19);
+
+        document.getElementById("firstName").innerText = secretary.firstName;
+        document.getElementById("lastName").innerText = secretary.lastName;
+        document.getElementById("age").innerText = secretary.age;
+    </script>
+</body>
+</html>

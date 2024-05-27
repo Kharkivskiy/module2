@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<style>
+    body, html {
+        height: 100%;
+    }
+
+    body {
+        font-family: 'Roboto', sans-serif;
+        background: linear-gradient(135deg, #9C9CFF, #ecf96a);
+        color: #fff;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    main {
+        text-align: center;
+        padding-top: 50px; 
+    }
+
+        main h2 {
+            margin-top: 200px; 
+            color: black;
+        }
+
+        main h1 {
+            padding: 10px;
+            border: 2px solid black;
+            border-radius: 30px;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+</style>
+
+<main>
+    <section class="row" aria-labelledby="aspnetTitle">
+        <h1 id="title">Модульна робота</h1>
+    </section>
+
+    <div class="row justify-content-center">
+        <section class="col-md-4" aria-labelledby="gettingStartedTitle">
+            <h2 id="gettingStartedTitle">Завдання №1</h2>
+            @Html.ActionLink("Перейти >>", "TASK1", null, new { @class = "btn btn-outline-dark" })
+        </section>
+        <section class="col-md-4" aria-labelledby="librariesTitle">
+            <h2 id="librariesTitle">Завдання №2</h2>
+            @Html.ActionLink("Перейти >>", "TASK2", null, new { @class = "btn btn-outline-dark" })
+        </section>
+        <section class="col-md-4" aria-labelledby="hostingTitle">
+            <h2 id="hostingTitle">Завдання №3</h2>
+            @Html.ActionLink("Перейти >>", "TASK3", null, new { @class = "btn btn-outline-dark" })
+        </section>
+    </div>
+</main>

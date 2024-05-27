@@ -1,0 +1,81 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Number Analysis</title>
+</head>
+<body>
+    <h2>Аналіз чисел</h2>
+
+    <div>
+        <label for="num">Введіть число:</label>
+        <input type="number" id="num" name="num">
+        <button onclick="fun()">Проаналізувати</button>
+    </div>
+
+    <h3>Результати:</h3>
+    <p><strong>Додатне чи від'ємне:</strong> <span id="sign"></span></p>
+    <p><strong>Чи є число простим:</strong> <span id="simple"></span></p>
+    <p><strong>Чи ділиться на 2, 5, 3, 6, 9 без залишку:</strong> <span id="division"></span></p>
+
+    <script>
+        function sign(num) {
+            let r1;
+            if (num > 0) {
+                r1 = "Число додатне";
+            } else if (num < 0) {
+                r1 = "Число від'ємне";
+            } else if (num == 0) {
+                r1 = "Це 0";
+            }
+            return r1;
+        }
+
+        function simple(num) {
+            let r2;
+            if (num <= 1) return r2 = "Число не просте";
+            for (let i = 2; i * i <= num; i++) {
+                if (num % i == 0)
+                    return r2 = "Число не просте";
+            }
+            return r2 = "Число просте";
+        }
+
+        function division(num) {
+            let r3 = "Число ділиться без залишку на: ";
+            let temp = r3;
+            if (num % 2 == 0) {
+                r3 += " 2";
+            }
+            if (num % 5 == 0) {
+                r3 += " 5";
+            }
+            if (num % 3 == 0) {
+                r3 += " 3";
+            }
+            if (num % 6 == 0) {
+                r3 += " 6";
+            }
+            if (num % 9 == 0) {
+                r3 += " 9";
+            }
+            if (r3 == temp) {
+                r3 = "Число не ділиться без залишку на задані числа.";
+            }
+            return r3;
+        }
+
+        function fun() {
+            let num = Number(document.getElementById("num").value);
+
+            document.getElementById("sign").innerHTML = sign(num);
+            document.getElementById("simple").innerHTML = simple(num);
+            document.getElementById("division").innerHTML = division(num);
+        }
+    </script>
+</body>
+</html>
